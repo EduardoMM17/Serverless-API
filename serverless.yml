@@ -1,0 +1,47 @@
+service: serverless-challenge
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - arn:aws:dynamodb:us-east-1:102453254117:table/FilmsT
+
+functions:
+  saveOnePelicula:
+    handler: src/handlers/peliculas.save_one
+    events:
+      - httpApi:
+          path: /pelicula
+          method: post
+  getOnePeliculaFromDb:
+    handler: src/handlers/peliculas.get_one_from_db
+    events:
+      - httpApi:
+          path: /fetch-pelicula/{id}
+          method: get
+  getOnePeliculaFromSwapi:
+    handler: src/handlers/peliculas.get_one_from_swapi
+    events:
+      - httpApi:
+          path: /fetch-pelicula-swapi/{id}
+          method: get
+
+resources:
+  Resources:
+    FilmsT:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: FilmsT
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

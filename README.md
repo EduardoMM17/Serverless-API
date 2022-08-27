@@ -9,28 +9,36 @@ Language: nodeJS
 AuthorLink: 'https://github.com/Marcuss17'  
 AuthorName: 'EM'  
 
-### Endpoint 1. 
+### Endpoint 1  
 Description: Fetches a movie JSON from SWAPI, creates a Pelicula object with the movie fields translated to spanish and saves the new Pelicula in table called FilmsT in Dynamodb.  
 Method: POST  
 Path: /pelicula  
 Body: { film_id: number }  
 
-### Endpoint 2.  
+### Endpoint 2    
 Description: Returns a pelicula Item from FilmsT table in Dynamodb according to the id passed in the url.  
 Method: GET  
 Path: /fetch-pelicula/:id  
 Params: { id: number }  
 
-### Endpoint 3.  
+### Endpoint 3  
 Description: Returns a movie from SWAPI according to the id passed in the url.  
 Method: GET  
 Path: /fetch-pelicula-swapi/:id  
 Params: { id: number }  
 
-### Endpoint 4.  
+### Endpoint 4    
 Description: Returns all Items from FilmsT table in Dynamodb.  
 Method: GET  
 Path: /pelicula  
 
+### Project structure  
+At source level the project is composed of 4 folders.  
+1. handlers  
+2. models  
+3. services  
+4. utils  
+
 ### Deployment  
-To deploy new functions run: sls deploy --verbose at root level  
+To deploy new changes run: sls deploy --verbose at root level  
+

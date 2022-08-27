@@ -1,4 +1,4 @@
-##Project Description  
+## Project Description  
 title: 'Serverless callenge by RIMAC'  
 description: 'This project is part of the challenges from the hiring process by RIMAC. It consists of setting up a serverless architecture through AWS Lambdas. The well known Serverless framework is used and the API has 4 endpoints that will be described below.'  
 cloud: AWS  

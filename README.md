@@ -10,8 +10,8 @@ authorLink: 'https://github.com/Marcuss17'
 authorName: 'EM'
 -->
 
-# Endpoint 1. 
-Description: Fetches a movie JSON from SWAPI, creates a Pelicula class with the movie fields translated to spanish and saves the new Pelicula in table called FilmsT in Dynamodb. 
-Method: POST 
-Path: /pelicula 
-Body: {film_id: number} 
+### Endpoint 1. 
+Description: Fetches a movie JSON from SWAPI, creates a Pelicula class with the movie fields translated to spanish and saves the new Pelicula in table called FilmsT in Dynamodb.  
+Method: POST  
+Path: /pelicula  
+Body: {film_id: number}  

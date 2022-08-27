@@ -30,5 +30,6 @@ exports.get_one_from_swapi = async (id) => {
 };
 
 exports.get_all_from_db = async () => {
-  // const
+  const result = await dynamodbService.scan_table(constants.TABLES.FILM);
+  return result.Items;
 };

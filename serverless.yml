@@ -31,6 +31,12 @@ functions:
       - httpApi:
           path: /fetch-pelicula-swapi/{id}
           method: get
+  getAllPeliculasFromDb:
+    handler: src/handlers/peliculas.get_all_from_db
+    events:
+      - httpApi:
+          path: /pelicula
+          method: get
 
 resources:
   Resources:

@@ -18,3 +18,7 @@ exports.get_item = async (table_name, Key) => {
     })
     .promise();
 };
+
+exports.scan_table = async (table_name) => {
+  return await dynamodb.scan({ TableName: table_name }).promise();
+};
